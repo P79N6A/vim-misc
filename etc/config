@@ -1,0 +1,36 @@
+Host *
+    User hy149372
+    ControlMaster auto
+    ControlPath ~/.ssh/master-%r@%h:%p
+    ControlPersist yes
+    ControlPersist 72h
+    GSSAPIAuthentication=no
+    StrictHostKeyChecking=no
+    TCPKeepAlive=yes
+    CheckHostIP=no
+    ServerAliveInterval=50
+    ForwardAgent=yes
+    UserKnownHostsFile /dev/null
+
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_github
+
+Host gitee.com
+    HostName gitee.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_github
+
+Host centos
+    HostName 127.0.0.1
+    Port 9022
+    User root 
+
+Host go
+    HostName 10.101.76.71
+    Port 22
+    UserKnownHostsFile /dev/null
+    ServerAliveInterval=50
+    StrictHostKeyChecking=no
+    GSSAPIAuthentication=no

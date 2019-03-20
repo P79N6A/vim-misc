@@ -1,0 +1,42 @@
+[core]
+	excludesfile = /Users/huangyi/.gitignore
+    pager = less -FiR
+    #pager = vimpager
+    #pager = more -p
+[difftool "sourcetree"]
+	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\"
+	path = -ro
+[merge]
+    prompt = false
+[mergetool "sourcetree"]
+	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = huangyi
+	email = hy149372@alibaba-inc.com
+[commit]
+	template = /Users/huangyi/.stCommitMsg
+[color]
+	status = auto
+	diff = auto
+	branch = auto
+	interactive = auto
+	ui = true
+[alias]
+	st = status -s
+    sttc = !git status | grep typechange | awk '{print $2}'
+    stmo = !git status | grep modified | awk '{print $2}'
+	co = checkout
+	ci = commit
+	br = branch
+	last = log -1
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lm = log --no-merges --color --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ls = log --no-merges --color --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lss = log --no-merges --color --stat --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
+	d = difftool
+[diff]
+	tool = bc3
+[difftool]
+	prompt = false
+	trustExitCode = true
